@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>위원 연수 만족도 조사</title>
+<style>
+:root{--bg:#f4f7f7;--card:#fff;--ink:#1b2a2e;--sub:#5b6b6f;--line:#dbe5e6;--main:#2f6f7a;--deep:#0f2f36;--warm:#d98e3f;--warmbg:#f8ebdb;--no:#b5483a}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Apple SD Gothic Neo","Malgun Gothic","맑은 고딕",sans-serif;line-height:1.55;-webkit-text-size-adjust:100%}
+header{background:var(--deep);color:#fff;padding:20px 16px 18px}
+header p{margin:0;color:#7fa9b0;font-size:13px;font-weight:700}
+header h1{margin:4px 0 6px;font-size:22px;line-height:1.3}
+header span{font-size:14px;color:#cfe0e2}
+main{max-width:640px;margin:0 auto;padding:16px}
+.how{background:var(--warmbg);border-radius:12px;padding:12px 14px;font-size:14px;margin-bottom:16px}
+h2{font-size:17px;margin:24px 0 10px;display:flex;align-items:center;gap:8px}
+h2 b{display:inline-flex;width:28px;height:28px;border-radius:50%;background:var(--main);color:#fff;align-items:center;justify-content:center;font-size:14px;flex:none}
+.item{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px;margin-bottom:10px}
+.item label.q,.item p.q{display:block;margin:0 0 10px;font-size:15px;font-weight:700}
+.item small{display:block;color:var(--sub);font-size:13px;margin:-4px 0 10px;font-weight:400}
+input[type=text],textarea{width:100%;border:1px solid var(--line);border-radius:10px;padding:10px 12px;font:inherit;font-size:16px;background:#fff;color:var(--ink)}
+textarea{min-height:96px;resize:vertical}
+.opts{display:grid;gap:6px}
+.opts.c2{grid-template-columns:repeat(2,1fr)}.opts.c5{grid-template-columns:repeat(5,1fr)}.opts.c3{grid-template-columns:repeat(3,1fr)}
+.opts button{min-height:46px;border:1px solid var(--line);background:#fff;border-radius:10px;font:inherit;font-size:14px;color:var(--ink);padding:6px 4px}
+.opts button[aria-pressed="true"]{background:var(--main);color:#fff;font-weight:700;border-color:transparent}
+.scale{display:flex;justify-content:space-between;font-size:12px;color:var(--sub);margin-top:6px}
+button:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid var(--warm);outline-offset:2px}
+.send{width:100%;min-height:52px;border:0;border-radius:12px;background:var(--main);color:#fff;font:inherit;font-size:17px;font-weight:700;margin-top:8px}
+.send[disabled]{opacity:.5}
+#msg{font-size:14px;margin-top:10px;min-height:22px;color:var(--sub)}
+#msg.ok{color:var(--main);font-weight:700}#msg.err{color:var(--no);font-weight:700}
+footer{color:var(--sub);font-size:12px;text-align:center;padding:20px 16px 32px}
+</style>
+</head>
+<body>
+<header><p>2026 학교폭력대책심의위원회 위원 역량강화 연수</p><h1>연수 만족도 조사</h1><span>오늘 연수가 어떠셨는지 알려 주세요.</span></header>
+<main>
+<div class="how">이름 없이 저장됩니다. 2분쯤 걸립니다. <b>학교 이름, 학생 이름은 적지 말아 주세요.</b></div><div class="item"><p class="q">1. 오늘 연수에 전반적으로 만족하십니까?</p><div class="opts c5" id="s1" role="group"><button type="button" data-v="1" aria-pressed="false">1</button><button type="button" data-v="2" aria-pressed="false">2</button><button type="button" data-v="3" aria-pressed="false">3</button><button type="button" data-v="4" aria-pressed="false">4</button><button type="button" data-v="5" aria-pressed="false">5</button></div><div class="scale"><span>전혀 그렇지 않다</span><span>매우 그렇다</span></div></div><div class="item"><p class="q">2. [강의 1] 사례로 보는 공정한 심의에 만족하십니까?</p><div class="opts c5" id="s2" role="group"><button type="button" data-v="1" aria-pressed="false">1</button><button type="button" data-v="2" aria-pressed="false">2</button><button type="button" data-v="3" aria-pressed="false">3</button><button type="button" data-v="4" aria-pressed="false">4</button><button type="button" data-v="5" aria-pressed="false">5</button></div><div class="scale"><span>전혀 그렇지 않다</span><span>매우 그렇다</span></div></div><div class="item"><p class="q">3. [강의 2] 심의위원회 운영 역량 강화에 만족하십니까?</p><div class="opts c5" id="s3" role="group"><button type="button" data-v="1" aria-pressed="false">1</button><button type="button" data-v="2" aria-pressed="false">2</button><button type="button" data-v="3" aria-pressed="false">3</button><button type="button" data-v="4" aria-pressed="false">4</button><button type="button" data-v="5" aria-pressed="false">5</button></div><div class="scale"><span>전혀 그렇지 않다</span><span>매우 그렇다</span></div></div><div class="item"><p class="q">4. 소위원회별 나눔이 위원 간 소통에 도움이 되었습니까?</p><div class="opts c5" id="s4" role="group"><button type="button" data-v="1" aria-pressed="false">1</button><button type="button" data-v="2" aria-pressed="false">2</button><button type="button" data-v="3" aria-pressed="false">3</button><button type="button" data-v="4" aria-pressed="false">4</button><button type="button" data-v="5" aria-pressed="false">5</button></div><div class="scale"><span>전혀 그렇지 않다</span><span>매우 그렇다</span></div></div><div class="item"><p class="q">5. 오늘 내용을 실제 심의에 바로 활용할 수 있다고 생각하십니까?</p><div class="opts c5" id="s5" role="group"><button type="button" data-v="1" aria-pressed="false">1</button><button type="button" data-v="2" aria-pressed="false">2</button><button type="button" data-v="3" aria-pressed="false">3</button><button type="button" data-v="4" aria-pressed="false">4</button><button type="button" data-v="5" aria-pressed="false">5</button></div><div class="scale"><span>전혀 그렇지 않다</span><span>매우 그렇다</span></div></div>
+<div class="item"><label class="q" for="t6">6. 실제 심의에서 활용하려는 내용을 한 가지 적어 주세요.</label><textarea id="t6"></textarea></div>
+<div class="item"><label class="q" for="t7">7. 심의위원회 운영에서 개선이 필요한 점을 적어 주세요.</label><small>심의 일정, 참석 안내, 자료 제공, 심의실 환경 등</small><textarea id="t7"></textarea></div>
+<div class="item"><label class="q" for="t8">8. 2027년 위원 연수에서 다루었으면 하는 주제를 적어 주세요.</label><textarea id="t8"></textarea></div>
+<button class="send" id="send" type="button">보내기</button>
+<div id="msg" role="status"></div>
+
+</main>
+<footer>경기도화성오산교육지원청 학교폭력제로센터 · 문의 031-371-0647</footer>
+<script>
+/* ▼ Firebase Realtime Database 주소 */
+const DB_URL="https://gansa-checklist-default-rtdb.firebaseio.com";
+const ROOM="wiwon1207";
+const put=async(path,body)=>{const r=await fetch(DB_URL.replace(/\/$/,"")+"/"+ROOM+"/"+path+".json",{method:"PUT",headers:{"Content-Type":"application/json"},body:JSON.stringify(body)});if(!r.ok)throw new Error(r.status);};
+const newId=()=>"r"+Date.now().toString(36)+Math.random().toString(36).slice(2,10);
+const getId=k=>{let v="";try{v=localStorage.getItem(k)||""}catch(e){}if(!v){v=newId();try{localStorage.setItem(k,v)}catch(e){}}return v};
+const choice=(el)=>{el.querySelectorAll("button").forEach(b=>b.addEventListener("click",()=>{el.querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed",x===b?"true":"false"));el.dataset.value=b.dataset.v}))};
+document.querySelectorAll(".opts").forEach(choice);
+const val=id=>(document.getElementById(id).value||"").trim();
+const pick=id=>document.getElementById(id).dataset.value||"";
+
+const sid=getId("wiwon1207-sat");
+document.getElementById("send").addEventListener("click",async()=>{
+  const m=document.getElementById("msg"),b=document.getElementById("send");m.className="";
+  const sc={};["s1","s2","s3","s4","s5"].forEach(k=>{const v=pick(k);if(v)sc[k]=+v});
+  if(Object.keys(sc).length<5){m.className="err";m.textContent="1~5번을 모두 골라 주세요.";return}
+  b.disabled=true;m.textContent="보내는 중입니다.";
+  try{
+    await put("sat/scores/"+sid,Object.assign(sc,{t:Date.now()}));
+    const tx={t6:val("t6"),t7:val("t7"),t8:val("t8")};
+    if(Object.values(tx).some(v=>v))await put("sat/text/"+sid,Object.assign(tx,{t:Date.now()}));
+    m.className="ok";m.textContent="보냈습니다. 오늘 함께해 주셔서 고맙습니다."}
+  catch(e){m.className="err";m.textContent="보내지 못했습니다. 연결을 확인하고 다시 눌러 주세요."}
+  b.disabled=false});
+</script>
+</body>
+</html>
